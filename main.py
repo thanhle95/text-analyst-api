@@ -4,8 +4,8 @@ import logging
 from opencensus.ext.azure.log_exporter import AzureLogHandler
 
 import utils
-
 app = FastAPI()
+
 
 logger = logging.getLogger(__name__)
 logger.setLevel(10)
@@ -47,3 +47,8 @@ def analyze_text(text: Model):
         response["keyphrases"].append(keyphrases["documents"][0])
 
     return response
+
+
+@app.get("/{hello}")
+def print_statement(hello):
+    print(hello)
