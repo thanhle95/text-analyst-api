@@ -51,4 +51,4 @@ def analyze_text(text: Model):
 
 @app.get("/{hello}")
 def print_statement(hello):
-    print(hello)
+    return {"message" : hello}
